@@ -1,15 +1,20 @@
+#include <stdio.h>
+
+int main() {
+
+int celsius, kelvin=0, fahrenheit=0, n1,n2;
 
 
-#include <stdlib.h>
+printf("Enter Celsius: ");
+scanf("%d", &celsius);
 
-double* convertTemperature(double celsius, int* returnSize) {
+kelvin = celsius + 273;
+fahrenheit = celsius * 1.8 + 32;
 
-    double *result = malloc(2 * sizeof(double));
+n1 = kelvin;
+n2 = fahrenheit;
 
-    result[0] = celsius + 273.15;
-    result[1] = celsius * 1.8 + 32;
+printf("%d, %d", n1, n2);
 
-    *returnSize = 2;
-
-    return result;
+return (0);
 }

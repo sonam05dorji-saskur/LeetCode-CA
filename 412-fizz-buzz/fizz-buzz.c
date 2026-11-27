@@ -1,34 +1,31 @@
 #include <stdio.h>
 
-char** fizzBuzz(int n, int* returnSize)
+int main()
 {
-    static char* answer[10001];
-    static char* result[10001];
+    int n;
 
-    *returnSize = n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
     for (int i = 1; i <= n; i++)
     {
         if (i % 3 == 0 && i % 5 == 0)
         {
-            answer[i - 1] = "FizzBuzz";
+            printf("FizzBuzz\n");
         }
         else if (i % 3 == 0)
         {
-            answer[i - 1] = "Fizz";
+            printf("Fizz\n");
         }
         else if (i % 5 == 0)
         {
-            answer[i - 1] = "Buzz";
+            printf("Buzz\n");
         }
         else
         {
-            char* str = result[i - 1];
-            static char numbers[10001][12];
-            sprintf(numbers[i - 1], "%d", i);
-            answer[i - 1] = numbers[i - 1];
+            printf("%d\n", i);
         }
     }
 
-    return answer;
+    return 0;
 }

@@ -2,30 +2,29 @@
 
 int main()
 {
-    int n;
+    int n, nums[100];
 
-    printf("Enter a number: ");
+    printf("Enter array size: ");
     scanf("%d", &n);
 
-    for (int i = 1; i <= n; i++)
+    printf("Enter array elements: ");
+
+    for (int i = 0; i < n; i++)
     {
-        if (i % 3 == 0 && i % 5 == 0)
-        {
-            printf("FizzBuzz\n");
-        }
-        else if (i % 3 == 0)
-        {
-            printf("Fizz\n");
-        }
-        else if (i % 5 == 0)
-        {
-            printf("Buzz\n");
-        }
-        else
-        {
-            printf("%d\n", i);
-        }
+        scanf("%d", &nums[i]);
     }
 
-    return 0;
+    for (int i = 1; i < n; i++)
+    {
+        nums[i] = nums[i] + nums[i - 1];
+    }
+
+    printf("Running Sum: ");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", nums[i]);
+    }
+
+    return (0);
 }
